@@ -1,12 +1,11 @@
-﻿
-<ul class="pagination" ng-class="{'no-pages': totalPages == 0, 'single-page': totalPages == 1}">
-    <li ng-class="{disabled: !hasPreviousPage}"><a href="" ng-click="changed(selectedPage - 1)">&laquo;</a></li>
-    <li ng-show="displayFirstPage"><a href="" ng-click="changed(0)">1</a></li>
-    <li ng-show="hasPreBuffer" class="disabled"><a href="">...</a></li>
-    <li ng-class="{active: page.isCurrent}" ng-repeat="page in pages">
-        <a href="" ng-click="changed(page.pageNumber)">{{page.pageNumber+1}}</a>
-    </li>
-    <li ng-show="hasPostBuffer" class="disabled"><a href="">...</a></li>
-    <li ng-show="displayLastPage"><a href="" ng-click="changed(totalPages-1)">{{totalPages}}</a></li>
-    <li ng-class="{disabled: !hasNextPage}"><a href="" ng-click="changed(selectedPage + 1)">&raquo;</a></li>
-</ul>
+<nav aria-label="Page navigation">
+  <ul class="pagination" ng-class="{'no-pages': totalPages == 0, 'single-page': totalPages == 1}">
+    <li class="page-item" ng-class="{disabled: !hasPreviousPage}"><a href="" class="page-link" ng-click="changed(selectedPage - 1)">&laquo;</a></li>
+    <li class="page-item" ng-show="displayFirstPage"><a href="" class="page-link" ng-click="changed(0)">1</a></li>
+    <li class="page-item disabled" ng-show="hasPreBuffer"><a href="" class="page-link">...</a></li>
+    <li class="page-item" ng-class="{active: page.isCurrent}" ng-repeat="page in pages"><a href="" class="page-link" ng-click="changed(page.pageNumber)">{{page.pageNumber+1}}</a></li>
+    <li class="page-item disabled" ng-show="hasPostBuffer"><a href="" class="page-link">...</a></li>
+    <li class="page-item" ng-show="displayLastPage"><a href="" class="page-link" ng-click="changed(totalPages-1)">{{totalPages}}</a></li>
+    <li class="page-item" ng-class="{disabled: !hasNextPage}"><a href="" class="page-link" ng-click="changed(selectedPage + 1)">&raquo;</a></li>
+  </ul>
+</nav>
